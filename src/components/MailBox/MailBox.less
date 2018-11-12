@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.MailBox {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+  background: url(./img/bg.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+.Sidebar {
+  width: 240px;
+  margin-right: 15px;
+  background-color: #f6f6f6;
+}
+
+.LettersWrap {
+  background-color: #fff;
+  flex-grow: 1;
+  padding: 20px 0;
+  max-width: calc(100% - 255px);
+}
+
+.LetterItem {
+  border-top: 1px solid #d7dccd;
+  padding: 8px 5px;
+  white-space: nowrap;
+  display: block;
+
+  &:last-child {
+    border-bottom: 1px solid #d7dccd;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .Collocutor {
+    font-weight: 600;
+    color: #252525; 
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+  }
+
+  .Subject {
+    padding-right: 10px;  
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .Excerpt {
+    color: #8c8c8c;
+    max-width: calc(100% - 320px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
