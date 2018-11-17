@@ -18,20 +18,18 @@ class LettersList extends React.PureComponent {
   render() {
 
     let lettersArr = this.state.lettersArr.map(item => 
-      <li className="LetterItem" key={item.date}>
-        <LetterLine
-          date={item.date}
-          collocutor={item.collocutor}
-          subject={item.subject}
-          letter={item.letter}
+      <li className="LetterItem" key={item.id}>
+        <LetterLine info={item}
         />
       </li>
     )
 
     return (
-      <ul className="LettersList">
-        {lettersArr}
-      </ul>
+      <div className="LettersWrap">
+        <ul className="LettersList">
+          {lettersArr}
+        </ul>
+      </div>
     );
 
   }

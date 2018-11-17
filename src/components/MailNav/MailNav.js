@@ -1,45 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import LettersList from '../LettersList/LettersList';
+import { NavLink } from 'react-router-dom';
 
-let incomingLetters = require('../../../incoming.json')
+import './MailNav.less';
 
-import './MailBox.less';
+class MailNav extends React.PureComponent {
 
-class MailBox extends React.PureComponent {
   render() {
     return (
-      <div className="MailBox">
-        <div className="Sidebar">
-          <ul>
-            <li>
+      <div className="Sidebar">
+        <ul>
+          <li className="MainMenuItem">
+            <NavLink to={"/messages/inbox"}>
               <span className="FolderIcon">
                 <i className="material-icons">email</i>
               </span>
               <span className="FolderName">Inbox</span>
-            </li>
-            <li>
+            </NavLink>
+          </li>
+          <li className="MainMenuItem">
+            <NavLink to={"/messages/sent"}>
               <span className="FolderIcon">
                 <i className="material-icons">reply</i>
               </span>
               <span className="FolderName">Sent</span>
-            </li>
-            <li>
+            </NavLink>
+          </li>
+          <li className="MainMenuItem">
+            <NavLink to={"/messages/trash"}>
               <span className="FolderIcon">
                 <i className="material-icons">delete</i>
               </span>
               <span className="FolderName">Trash</span>
-              </li>
-          </ul>
-        </div>
-
-        <div className="LettersWrap">
-          <LettersList letters={incomingLetters} />
-        </div>
+            </NavLink>
+          </li>
+        </ul>
       </div>
     );
   }
 }
 
-export default MailBox;
+export default MailNav;

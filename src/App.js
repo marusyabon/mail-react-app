@@ -3,13 +3,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MailBox from './components/MailBox/MailBox';
+import MailNav from './components/MailNav/MailNav';
+import './assets/App.less';
 
+import { BrowserRouter } from 'react-router-dom';
 
-// если необходимо, вид сборки можно проверить в коде:
-// if (process.env.NODE_ENV === 'production') {
-// if (process.env.NODE_ENV !== 'production') {
+import PagesRouter from './pages/PagesRouter';
 
 ReactDOM.render( 
-  <MailBox />
+  <BrowserRouter>
+    <div className="MailBox">
+      <div className="Flex">
+        <MailNav />
+        <PagesRouter />
+      </div>
+    </div>
+  </BrowserRouter>
 , document.getElementById('container') );

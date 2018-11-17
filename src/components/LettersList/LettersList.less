@@ -1,0 +1,54 @@
+.LettersWrap {
+  background-color: #fff;
+  flex-grow: 1;
+  padding: 20px 0;
+  max-width: calc(100% - 255px);
+}
+
+.LetterItem {
+  border-top: 1px solid #d7dccd;
+  white-space: nowrap;
+  display: block;
+
+  a {
+    padding: 8px 5px;
+    display: block;
+    transition: .2s;
+
+    &:hover {
+      background-color: #ececec;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #d7dccd;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .Collocutor {
+    font-weight: 600;
+    color: #252525; 
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+  }
+
+  .Subject {
+    padding-right: 10px;  
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .Excerpt {
+    color: #8c8c8c;
+    max-width: calc(100% - 320px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

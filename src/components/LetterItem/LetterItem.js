@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 
-class LetterLine extends React.PureComponent {
+class LetterItem extends React.PureComponent {
   static propTypes = {
     info:PropTypes.shape({
       date: PropTypes.string.isRequired,
@@ -11,20 +10,18 @@ class LetterLine extends React.PureComponent {
       letter: PropTypes.string.isRequired
     }),
   }
-
+  
   render() {
+
     let {id, collocutor, subject, letter} = this.props.info;
-    let excerpt = letter.slice(0,90);
-    
+   
     return (
-      <NavLink to={"/message/"+id}>
-        <span className="Collocutor">{collocutor}</span>
-        <span className="Subject">{subject}</span>
-        <span className="Excerpt">{excerpt}</span>
-      </NavLink>
-      
+      <div className="LetterArea">
+        <p>{id}</p>
+        <h1>{subject}</h1>
+      </div>
     )
   }
-}   
+}
 
-export default LetterLine;
+export default LetterItem;
