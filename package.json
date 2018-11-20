@@ -39,6 +39,7 @@
     "webpack-material-design-icons": "^0.1.0"
   },
   "dependencies": {
+    "es6-promise": "^4.2.5",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",

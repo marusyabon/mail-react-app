@@ -19,7 +19,7 @@ class LettersList extends React.PureComponent {
 
     let lettersArr = this.state.lettersArr.map(item => 
       <li className="LetterItem" key={item.id}>
-        <LetterLine info={item}
+        <LetterLine info={item} folder={this.props.folder}
         />
       </li>
     )

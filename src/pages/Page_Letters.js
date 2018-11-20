@@ -10,14 +10,14 @@ class Page_Mail_Box extends React.PureComponent {
           
   render() {
 
-    let folderName=this.props.match.params.foldname;
+    let folderName = this.props.match.params.foldname;
 
-    let targetList=lettersArray[folderName];
+    let targetList = lettersArray[folderName];
 
     !targetList  && (targetList = incomingLetters);
-
+    
     return (
-      <LettersList letters={targetList}  />
+      <LettersList key={folderName} letters={targetList} />
     );
   }
   

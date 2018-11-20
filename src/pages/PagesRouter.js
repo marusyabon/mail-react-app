@@ -10,12 +10,12 @@ class PagesRouter extends React.Component {
   render() {
 
     return (
-      <div>
+      <React.Fragment>
         <Route path="/" exact component={Page_Letters} />
         <Route path="/messages/:foldname" component={Page_Letters} />
         <Route path="/message/:lid" component={Page_Letter} />
         <Route path="/new-message" component={Page_New_Letter} />
-      </div>
+      </React.Fragment>
     );
     
   }
