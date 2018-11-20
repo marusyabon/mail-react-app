@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {deletionEvents} from '../../events';
 import './LetterItem.less';
 
 class LetterItem extends React.PureComponent {
@@ -10,8 +10,7 @@ class LetterItem extends React.PureComponent {
       collocutor: PropTypes.string.isRequired,
       subject: PropTypes.string.isRequired,
       letter: PropTypes.string.isRequired
-    }),
-    cbRemoved: PropTypes.func.isRequired
+    })
   }
 
   formatDate = (date) => {
@@ -50,8 +49,8 @@ class LetterItem extends React.PureComponent {
     }
   }
 
-  removeLetter = () => {
-    this.props.cbRemoved(this.props.info.id);   
+  removeLetter = (EO) => {
+    deletionEvents.emit('LetterDeleted',this.props.info.id);
   }
 
   render() {

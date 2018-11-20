@@ -8,51 +8,42 @@ class Page_Letter extends React.PureComponent {
   
   state = {
     lettersArr: lettersData,
-    activeFolder: 'inbox',
+    letterId: this.props.match.params.lid
   };
 
-  findData = (letterId) => {
+
+  findFolder = () => {
+    let letterId = this.state.letterId;
     let lettersArr = this.state.lettersArr;
-    let targetFolder;
+    let targetFolder = this.state.activeFolder;
+
     for (let key in lettersArr) {
       if(lettersArr[key].find( c => c.id==letterId )) {
         targetFolder = key;
-        this.setState({
-          activeFolder: targetFolder,
-        }) 
       }
-    }     
-    console.log(targetFolder);
-    return lettersArr[targetFolder].find( c => c.id==letterId );
+    }  
+    return targetFolder;
   }
 
-  removerLetter = (id) => {
-    let folder = this.state.activeFolder;
-    let targetLetter = this.state.lettersArr[folder].filter( p => p.id == id);
+  targetFolder = this.findFolder();
 
-    // let newTrash = this.state.trash;
-    // newTrash.push(targetLetter);
+  findData = () => {
+    let letterId = this.state.letterId;
+    let lettersArr = this.state.lettersArr;
 
-    let filterredFolder = this.state.lettersArr[folder].filter( p => {
-      return p.id != id;
-    });
+    let info = lettersArr[this.targetFolder].find( c => c.id==letterId )
 
-    this.setState({
-      [folder]: [...filterredFolder],
-    })
-    console.log(id)
+    return info;
   }
 
   render() {
 
-    let letterId=this.props.match.params.lid;
-    let letterInfo = this.findData(letterId);
+    let info = this.findData();
 
     return (
       <LetterItem 
-        info={letterInfo} 
-        folder={this.state.activeFolder}
-        cbRemoved={this.removerLetter}
+        info={info} 
+        folder={this.targetFolder}
       />
     );
     
