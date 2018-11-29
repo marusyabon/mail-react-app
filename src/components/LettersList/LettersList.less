@@ -1,14 +1,13 @@
 .LettersWrap {
   background-color: #fff;
-  flex-grow: 1;
   padding: 20px 0;
-  max-width: calc(100% - 255px);
 }
 
 .LetterItem {
   border-top: 1px solid #d7dccd;
   white-space: nowrap;
   display: block;
+  position: relative;
 
   a {
     padding: 8px 5px;
@@ -47,8 +46,79 @@
 
   .Excerpt {
     color: #8c8c8c;
-    max-width: calc(100% - 320px);
+    max-width: calc(100% - 445px);
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .Date {
+    position: absolute;
+    right: 10px;
+    padding-right: 5px;
+    overflow: hidden;
+    max-width: 125px;
+    font-size: 12px;
+    line-height: 19px;
+    font-style: italic;
+    color: #005cb4;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LetterItem {
+    white-space: normal;
+    font-size: 13px;
+
+    a {
+      padding: 8px 10px;
+    }
+
+    span {
+      white-space: nowrap;
+      display: block;
+    }
+
+    .Collocutor {
+      padding: 0;
+      padding-bottom: 3px;
+    }
+
+    .Excerpt {
+      max-width: 100%;
+    }
+
+    .Date {
+      display: none;
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+
+  li {
+    display: inline-block;
+  }
+}
+.pagination>li>a, .pagination>li>span {
+  position: relative;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.pagination>.disabled>a, 
+.pagination>.disabled>a:focus, 
+.pagination>.disabled>a:hover, 
+.pagination>.disabled>span, 
+.pagination>.disabled>span:focus, 
+.pagination>.disabled>span:hover {
+  color: #777;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: not-allowed;
 }

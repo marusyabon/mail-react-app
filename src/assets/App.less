@@ -35,44 +35,63 @@ a {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
+
+  .MailArea {
+    flex-grow: 1;
+    max-width: calc(100% - 255px);
+  }
 }
 
-.Sidebar {
-  width: 240px;
-  margin-right: 15px;
-  background-color: #f6f6f6;
-  padding: 10px 0;
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
-.MainMenuItem {
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
-  a {
-    padding: 5px;
-    padding-left: 10px;
-    display: block;
-    color: #252525;
-    transition: .2s;
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
 
-    &:hover,
-    &:active {
-      background-color: #fff;
-      color: #000;
+.DialogMessage {
+  background-color: #fff;
+  box-shadow: 0 0 10px #077400;
+  color: #077400;
+  padding: 15px 10px;
+  font-size: 16px;
+}
+
+.Approve {
+  &:hover {
+    color: #077400!important;
+  }
+}
+
+.Warning {
+  &:hover {
+    color: #f00000!important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .MailBox {
+    background: #0f3746;
+    padding: 10px;
+    > .Flex {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+    .MailArea {
+      width: 100%;
+      max-width: 100%;
     }
   }
 
-  span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 20px;
-  }
-
-  .FolderIcon {
-    width: 23px;
-    i {
-      font-size: 18px;
-      line-height: 18px;
-      vertical-align: middle;
-      padding-block-end: 2px;
-    }    
+  .ComposeBtn {
+    text-align: right;
   }
 }

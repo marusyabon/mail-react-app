@@ -3,22 +3,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MailNav from './components/MailNav/MailNav';
-import ControllBar from './components/ControllBar/ControllBar';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Router from './router';
 import './assets/App.less';
+import combinedReducer from './redux/reducers.js';
 
-import { BrowserRouter } from 'react-router-dom';
-
-import PagesRouter from './pages/PagesRouter';
+let store=createStore(combinedReducer);
 
 ReactDOM.render( 
-  <BrowserRouter>
-    <div className="MailBox">
-      <ControllBar />
-      <div className="Flex">
-        <MailNav />
-        <PagesRouter />
-      </div>
-    </div>
-  </BrowserRouter>
+    <Provider store={store}>
+        <Router />
+    </Provider>
 , document.getElementById('container') );

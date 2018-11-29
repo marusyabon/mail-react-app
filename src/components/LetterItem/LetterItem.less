@@ -1,8 +1,7 @@
 .LetterArea {
   background-color: #fff;
-  flex-grow: 1;
   padding: 15px 20px;
-  max-width: calc(100% - 255px);
+
 }
 
 .LetterHead {
@@ -14,11 +13,17 @@
     font-size: 28px;
     font-weight: normal;
     padding-block-end: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   h3 {
     font-size: 14px;
     padding-block-end: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   p {
@@ -35,4 +40,20 @@
   line-height: 22px;
   color: #141414;
   max-width: 600px;
+}
+
+.DialogMessage.fadeIn {
+  opacity: 0;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@media screen and (max-width: 600px)  {
+  .LetterHead {
+    h1 {
+      font-size: 24px;
+    }
+  }
 }
