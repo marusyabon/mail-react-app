@@ -8,11 +8,7 @@ import LetterLine from '../LetterLine/LetterLine';
 import './LettersList.less';
 
 class LettersList extends React.PureComponent {
-
-  // componentWillMount() {
-  //   this.props.dispatch( create_list(this.props.match.params.folder) );
-  // }
-
+  
   state = {
     activePage: this.props.match.params.page || 1
   };

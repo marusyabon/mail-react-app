@@ -2,10 +2,10 @@ const CREATE_LIST='CREATE_LIST';
 const REMOVER_LETTER='REMOVER_LETTER';
 const SEND_LETTER='SEND_LETTER';
 
-const create_list = function(letterid) {
+const create_list = function(letters) {
   return {
     type: CREATE_LIST,
-    letterid:letterid,
+    letters:letters,
   };
 }
 

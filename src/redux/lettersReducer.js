@@ -1,4 +1,5 @@
-﻿import { REMOVER_LETTER, SEND_LETTER } from './lettersAC';
+﻿import { CREATE_LIST, REMOVER_LETTER, SEND_LETTER } from './lettersAC';
+
 import appData from '../appData';
 
 const initState={
@@ -8,6 +9,14 @@ const initState={
 function lettersReducer(state=initState,action) {
 
   switch (action.type) {
+
+    case CREATE_LIST: {
+      let newState={...state};
+
+      //newState = action.letters;
+      console.log(newState)  ;    
+      return newState
+    }
 
     case REMOVER_LETTER: {
       let newState={...state};
